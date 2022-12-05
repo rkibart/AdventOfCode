@@ -4,7 +4,7 @@ $data = file( 'input-01.txt', FILE_IGNORE_NEW_LINES );
 
 $data[] = '';
 
-$dataSize = count($data);
+$dataSize = count( $data );
 
 /* --- Part One --- */
 
@@ -14,7 +14,7 @@ $elfCalories = 0;
 for($i = 0; $i < $dataSize; $i++ ) {
 
     if( $data[$i] !== '' ) {
-        $elfCalories += (int) $data[ $i ];
+        $elfCalories += (int) $data[$i];
 
     } else {
         
@@ -34,7 +34,7 @@ for($i = 0; $i < $dataSize ; $i++ ) {
 
     if( $data[$i] !== '' ) {
 
-        $elfCalories += (int) $data[ $i ];
+        $elfCalories += (int) $data[$i];
 
     } else {
         
