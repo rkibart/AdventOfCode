@@ -11,8 +11,8 @@ echo "<b>$secondPartResult</b><br />";
 
 function solution( string $data, int $frameLength ) : int {
     $dataLength = strlen( $data );
+    $result = 0;
     for( $i = 0; $i < $dataLength; $i++ ) {
-        $result = 0;
         $marker[]= $data[$i];
         if( count( $marker ) >= $frameLength) {            
             if( count( array_unique( $marker) ) !== $frameLength ) {
