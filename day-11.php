@@ -1,5 +1,5 @@
 <?php
-$data = file( 'input-11-01.txt', FILE_IGNORE_NEW_LINES );
+$data = file( 'input-11.txt', FILE_IGNORE_NEW_LINES );
 $dataSize = count( $data );
 
 $monkeysPartOne = [];
