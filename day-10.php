@@ -16,7 +16,6 @@ foreach($data as $instructionLine ) {
     switch( $instrunction ) {
 
         case 'noop':
-            
             if( $cycle % 40 === 20) {
 
                 $signalStrength += $cycle * $xRegister;
@@ -25,17 +24,21 @@ foreach($data as $instructionLine ) {
             beforeCycleTick($cycle, $xRegister, $drawedCRTLines);
             $cycle++;
             break;
+
         case 'addx':
             if( $cycle % 40 === 20) {
                 
                 $signalStrength += $cycle * $xRegister;
             }
+
             beforeCycleTick($cycle, $xRegister, $drawedCRTLines);
             $cycle++;
+
             if( $cycle % 40 === 20) {
 
                 $signalStrength += $cycle * $xRegister;
             }
+
             beforeCycleTick($cycle, $xRegister, $drawedCRTLines);
             $cycle++;
             $xRegister += $value;
@@ -45,8 +48,8 @@ foreach($data as $instructionLine ) {
 
 function  beforeCycleTick( int $cycle, int $register, array &$printArray): void {
 
-    $line = floor( ($cycle - 1) / 40 );
-    $position = $cycle-1 - 40 * $line;
+    $line = floor( ( $cycle - 1 ) / 40 );
+    $position = $cycle - 1 - 40 * $line;
 
     if( $position >= $register - 1 && $position <= $register + 1 ) {
         $printArray[$line] .= '#';
